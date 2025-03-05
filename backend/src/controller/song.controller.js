@@ -1,5 +1,6 @@
 import { Song } from "../models/song.model.js"
 
+
 export const getAllSongs = async (req, res, next) => {
     try {
         // -1 = descending ; 1 = Ascending
@@ -81,4 +82,3 @@ export const getTrendingSongs = async (req, res, next) => {
         next(error);
     } 
 }
-

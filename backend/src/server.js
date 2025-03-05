@@ -44,7 +44,7 @@ app.use(fileUpload({
 
 const tempDir = path.join(process.cwd(), "tmp")
 
-cron.schedule("0 0 * * *", () => { 
+cron.schedule("0 * * * *", () => { 
     if(fstat.existsSync(tempDir)) {
         fs.readdir(tempDir, (err, files) => {
             if(err) {

@@ -11,6 +11,7 @@ interface AuthStore {
 	checkAdminStatus: () => Promise<void>;
 	reset: () => void;
 }
+
 export const useAuthStore = create<AuthStore>((set) => ({
 	isAdmin: false,
 	isLoading: false,

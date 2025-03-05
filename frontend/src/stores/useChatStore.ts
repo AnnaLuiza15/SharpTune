@@ -3,6 +3,7 @@ import { Message, User } from "@/types";
 import { create } from "zustand";
 import { io } from "socket.io-client";
 
+
 interface ChatStore {
 	users: User[];
 	isLoading: boolean;
@@ -13,6 +14,7 @@ interface ChatStore {
 	userActivities: Map<string, string>;
 	messages: Message[];
 	selectedUser: User | null;
+
 
 	fetchUsers: () => Promise<void>;
 	initSocket: (userId: string) => void;
@@ -39,6 +41,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 	userActivities: new Map(),
 	messages: [],
 	selectedUser: null,
+
 
 	setSelectedUser: (user) => set({ selectedUser: user }),
 

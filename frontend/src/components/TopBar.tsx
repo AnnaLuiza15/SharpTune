@@ -5,6 +5,7 @@ import SignInOAuthButtons from "./SignInOAuthButtons";
 import { useAuthStore } from "@/stores/useAuthStore";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/button";
+import SearchBar from "./SearchBar/SearchBar";
 
 const Topbar = () => {
 	const { isAdmin } = useAuthStore();
@@ -16,10 +17,15 @@ const Topbar = () => {
       backdrop-blur-md z-10
     '
 		>
-			<div className='flex gap-2 items-center'>
-				<img src='/logo.png' className='size-8' alt='SongSearch logo' />
-				SongSearch
+			<div className='flex gap-2 items-center justify-center'>
+				<img src='/logo.png' className='size-12 mt-1 items-center' alt='SongSearch logo' />
+				<h2 className="font-bold text-2xl">SharpTune</h2>
 			</div>
+
+			<div>
+				<SearchBar />
+			</div>
+
 			<div className='flex items-center gap-4'>
 				{isAdmin && (
 					<Link to={"/admin"} className={cn(buttonVariants({ variant: "outline" }))}>
@@ -32,7 +38,9 @@ const Topbar = () => {
 					<SignInOAuthButtons />
 				</SignedOut>
 
-				<UserButton />
+				<div className='transform scale-125'>
+					<UserButton />
+				</div>
 			</div>
 		</div>
 	);

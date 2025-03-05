@@ -160,5 +160,4 @@ export const useMusicStore = create<MusicStore>((set) => ({
         }
     },
 
-
 }))
